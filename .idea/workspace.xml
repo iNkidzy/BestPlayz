@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae385e99-6148-4a34-b207-eb83bcabaedd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Best-Playz-Backend copy" beforeDir="false" afterPath="$PROJECT_DIR$/Best-Playz-Backend copy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Best-Playz-Backend copy/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Best-Playz-Backend copy/package-lock.json" afterDir="false" />
-    </list>
+    <list default="true" id="ae385e99-6148-4a34-b207-eb83bcabaedd" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Best-Playz-Backend copy" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1stPH6JkX46fzUfKPw65xes6KgM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -36,7 +32,7 @@
       <option name="presentableId" value="Default" />
       <updated>1621688821690</updated>
       <workItem from="1621688823158" duration="622000" />
-      <workItem from="1621689559968" duration="737000" />
+      <workItem from="1621689559968" duration="814000" />
     </task>
     <servers />
   </component>
