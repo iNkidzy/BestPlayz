@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+
+    BestPlayzBackend:
+            build: 
+                context: BestPlayzBackend
+            restart: always
+            ports:
+                - 40001:80
+    BestPlayzFrontend:
+            build:
+                context: BestPlayzFrontend
+            restart: always
+            ports:
+                - 40002:80

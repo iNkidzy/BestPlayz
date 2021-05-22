@@ -1,9 +1,0 @@
-version: "3.3"
-
-services:
-  app:
-    environment:
-      EnvironmentName: Development
-    ports:
-      - 3601:80
-

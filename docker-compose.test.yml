@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+
+    BestPlayzBackend:
+            environment:
+                EnvironmentName: Development
+            ports:
+                - 4301:80
+
+    BestPlayzFrontend:
+            environment:
+                EnvironmentName: Development
+            ports:
+                 - 4201:80
