@@ -2,15 +2,51 @@ version: "3.3"
 
 services:
 
-    BestPlayzBackend:
-            build: 
-                context: BestPlayzBackend
-            restart: always
-            ports:
-                - 40001:80
     BestPlayzFrontend:
-            build:
-                context: BestPlayzFrontend
-            restart: always
-            ports:
-                - 40002:80
+
+        image: nadiamiteva/BestPlayzFrontend:${BUILD_NUMBER}
+        restart: always
+        
+    BestPlayzBackend:
+
+        image: nadiamiteva/BestPlayzBackend:${BUILD_NUMBER}
+        restart: always
+        container_name: app
+            volumes:
+                - .:/usr/src/app
+                - /usr/src/app/node_modules
+              ports:
+                - 3000:3000
+                - 9229:9229
+              env_file:
+                - .env
+              networks:
+                - postgres
+    postgres:
+            container_name: best-playz
+            image: postgres:latest
+                ports:
+                 - "5432:5432"
+            volumes:
+                 - /data/postgres:/data/postgres
+            env_file:
+                - docker.env
+            networks:
+                - postgres
+    pgadmin:
+            links:
+                - postgres:postgres
+            container_name: best-playz-pgadmin
+            image: dpage/pgadmin4
+                ports:
+                    - "8083:80"
+            volumes:
+                - /data/pgadmin:/root/.pgadmin
+            env_file:
+                - docker.env
+            networks:
+                - postgres
+                    
+    networks:
+        postgres:
+            driver: bridge
