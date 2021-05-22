@@ -1,13 +1,13 @@
 version: "3.3"
 
 services:
-    
-    BestPlayzBackend:
+
+    frontend:
         environment:
             EnvironmentName: Production
         ports:
             - 4701:80
-    BestPlayzFrontend:
+    backend:
         environment:
             EnvironmentName: Production
         ports:

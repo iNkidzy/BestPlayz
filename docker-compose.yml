@@ -2,12 +2,12 @@ version: "3.3"
 
 services:
 
-    BestPlayzFrontend:
+    frontend:
 
         image: nadiamiteva/BestPlayzFrontend:${BUILD_NUMBER}
         restart: always
-        
-    BestPlayzBackend:
+
+    backend:
 
         image: nadiamiteva/BestPlayzBackend:${BUILD_NUMBER}
         restart: always

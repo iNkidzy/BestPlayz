@@ -4,29 +4,29 @@ pipeline {
             stage("Build") {
                 steps {
                     parallel(
-                        bestPlayzBackend: {
+                        backend: {
                             sh "npm install"
                             sh "npm run build"
                             sh "docker build . -t nadiamiteva/BestPlayzBackend:${BUILD_NUMBER}"
                         }
-                        bestPlayzFrontend: {
+                        frontend: {
                             sh "ng build"
                             sh "docker build . -t nadiamiteva/BestPlayzFrontend:${BUILD_NUMBER}"
                         }
-                    )  
+                    )
                 }
 
             }
             stage("Deliver") {
                 steps {
                         parallel(
-                            bestPlayzBackend: {
+                            backend: {
                                 withCredentials([usernamePassword(credentialsId: 'DockerHub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                                 sh 'docker login -u ${USERNAME} -p ${PASSWORD}'
                                 sh "docker push nadiamiteva/BestPlayzBackend:${BUILD_NUMBER}"
                                 }
                             },
-                            bestPlayzFrontend: {
+                            frontend: {
                                 withCredentials([usernamePassword(credentialsId: 'DockerHub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                                 sh 'docker login -u ${USERNAME} -p ${PASSWORD}'
                                 sh "docker push nadiamiteva/BestPlayzFrontend:${BUILD_NUMBER}"
