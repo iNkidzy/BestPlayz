@@ -10,7 +10,6 @@ pipeline {
                             sh "docker build . -t nadiamiteva/BestPlayzBackend:${BUILD_NUMBER}"
                         }
                         frontend: {
-                            sh "ng build"
                             sh "docker build . -t nadiamiteva/BestPlayzFrontend:${BUILD_NUMBER}"
                         }
                     )
