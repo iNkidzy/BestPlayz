@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae385e99-6148-4a34-b207-eb83bcabaedd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BestPlayzFrontend/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BestPlayzFrontend/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BestPlayzFrontend/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/BestPlayzFrontend/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,6 +45,7 @@
       <workItem from="1621688823158" duration="622000" />
       <workItem from="1621689559968" duration="814000" />
       <workItem from="1621700560991" duration="523000" />
+      <workItem from="1621706299357" duration="874000" />
     </task>
     <servers />
   </component>
