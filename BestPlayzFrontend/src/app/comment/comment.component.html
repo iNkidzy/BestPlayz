@@ -1,0 +1,98 @@
+<div fxLayout="row" fxFlex>
+  <div fxLayout="column" fxFlex="30">
+    <mat-card fxFlex>
+      <mat-card-header>
+        <h4>Comments on</h4>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="!selectedHighscore">
+          <h3>No selectedHighscore</h3>
+        </div>
+        <div *ngIf="selectedHighscore">
+        <h3>Highscore Id {{selectedHighscore.id}}</h3>
+        <h3>Highscore gameId {{selectedHighscore.gameId}}</h3>
+        <h3>Highscore score {{selectedHighscore.score}}</h3>
+        <h3>Highscore nickname {{selectedHighscore.nickname}}</h3>
+        <h3>Highscore time {{selectedHighscore.time}}</h3>
+        <h3>Highscore time {{selectedHighscore.time}}</h3>
+        </div>
+        <h4>Clients</h4>
+        <div *ngIf="clients$ | async as clients">
+          <ul>
+            <li *ngFor="let client of clients">
+              {{client.nickname}}
+            </li>
+          </ul>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxLayout="column" fxFlex="70" >
+    <mat-card fxFlex fxLayout="column">
+      <mat-card-header>
+        <h2 *ngIf="selectedHighscore">Comments on {{selectedHighscore.nickname}}'s score of {{selectedHighscore.score}}</h2>
+      </mat-card-header>
+      <mat-card-content fxFlex fxLayout="column">
+        <mat-list fxFlex class="scrollable-mat-list">
+          <mat-list-item *ngFor="let comment of comments">
+            <mat-icon mat-list-icon>face</mat-icon>
+            <div mat-line class="comment-text">{{comment?.text}}</div>
+            <div mat-line class="comment-sender-text" style="font-size: x-small">{{comment?.sender}}  -  {{comment?.posted}}</div>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <div *ngIf="isLoggedIn">
+          <mat-form-field class="primary-text-colour" fxFlex="40">
+            <mat-label>Write Comment</mat-label>
+            <input matInput type="text" [formControl]="commentFC">
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="postComment()">
+              <mat-icon>send</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div *ngIf="!isLoggedIn"
+          class="warn-text-colour"
+          style="font-family: cursive"
+          style="font-size: 14px">
+          You need to log in to post a comment
+        </div>
+      </mat-card-actions>
+
+      <mat-card-footer fxFlex="30px" style="padding-left: 30px">
+        <div *ngIf="error$ | async as error"
+             class="warn-text-colour"
+             style="font-family: cursive"
+             style="font-size: 14px">
+          {{error}}
+        </div>
+        <div *ngIf="socketId"
+             class="warn-text-colour"
+             style="font-family: cursive"
+             style="font-size: 14px">
+          socketId = {{socketId}}
+        </div>
+
+        <div *ngIf="!socketId"
+             class="warn-text-colour"
+             style="font-family: cursive"
+             style="font-size: 14px">
+          connecting...  {{userNickname}}
+        </div>
+      </mat-card-footer>
+    </mat-card >
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
