@@ -7,10 +7,10 @@ pipeline {
                         backend: {
                             sh "npm install"
                             sh "npm run build"
-                            sh "docker build . -t nadiamiteva/BestPlayzBackend:${BUILD_NUMBER}"
+                            sh "docker build . -t nadiamiteva/bestplayzbackend-third:${BUILD_NUMBER}"
                         }
                         frontend: {
-                            sh "docker build . -t nadiamiteva/BestPlayzFrontend:${BUILD_NUMBER}"
+                            sh "docker build . -t nadiamiteva/bestplayzfrontend-third:${BUILD_NUMBER}"
                         }
                     )
                 }
@@ -22,13 +22,13 @@ pipeline {
                             backend: {
                                 withCredentials([usernamePassword(credentialsId: 'DockerHub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                                 sh 'docker login -u ${USERNAME} -p ${PASSWORD}'
-                                sh "docker push nadiamiteva/BestPlayzBackend:${BUILD_NUMBER}"
+                                sh "docker push nadiamiteva/bestplayzbackend-third:${BUILD_NUMBER}"
                                 }
                             },
                             frontend: {
                                 withCredentials([usernamePassword(credentialsId: 'DockerHub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                                 sh 'docker login -u ${USERNAME} -p ${PASSWORD}'
-                                sh "docker push nadiamiteva/BestPlayzFrontend:${BUILD_NUMBER}"
+                                sh "docker push nadiamiteva/bestplayzfrontend-third:${BUILD_NUMBER}"
                                 }
                             }
                         )         
