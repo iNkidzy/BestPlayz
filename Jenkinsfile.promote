@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage("Release to production") {
+            steps {
+                sh "docker-compose -p production -f docker-compose.yml -f docker-compose.prod.yml up -d"
+            }
+        }
+    }
+}
